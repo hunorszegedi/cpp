@@ -1,6 +1,5 @@
 #include "functions.h"
 
-
 /*
 int main(int argc, char *argv[])
 {
@@ -18,23 +17,11 @@ int main(int argc, char *argv[])
     }
     cout << sum << endl;
 
-//    int n = 7;
-//    cout << "The number of bits in " << n << " is " << countBits(n) << endl;
-//    n = 8;
-//    cout << "The number of bits in " << n << " is " << countBits(n) << endl;
-//    cout << "The code for the mean function" << endl;
-//    int array[] = {1, 2, 3, 4, 5};
-//    int size = sizeof(array) / sizeof(array[0]);
-//    cout << mean(array, size) << endl;
-//    cout << "The code for the stddev function" << endl;
-//    cout << stddev(array, size) << endl;
-
-    return 0;
 
 }
 */
 
-int main() {
+int main(int argc, char *argv[]) {
 
     //1.
     cout << "Give me a number:" << endl;
@@ -76,6 +63,38 @@ int main() {
 
     cout << "A ket legnagyobb elem: " << result1.first << " es " << result1.second << endl;
 
+    //6. karakter
+    double sum = 0;
+    for (int i = 1; i < argc; ++i) {
+        istringstream iss(argv[i]);
+        double number = 0;
+        if (iss >> number) {
+            sum += number;
+        }
+    }
+    cout << "Az osszeg: " << sum << endl;
 
+    //7. karakter
+    string text = "Ez egy pelda szoveg, amit szavakra fogunk bontani.";
+    int result3 = countWords(text);
+
+    cout << "A szavak szama: " << result3 << endl;
+
+    //8. karakter
+    string originalText = "Hello, World! 123";
+    string encodedText = code(originalText);
+    string decodedText = decode(encodedText);
+
+    cout << "Eredeti szoveg: " << originalText << endl;
+    cout << "Kodolt szoveg: " << encodedText << endl;
+    cout << "Dekodolt szoveg: " << decodedText << endl;
+
+    //9. karakter
+    string line;
+
+    while (getline(cin, line)) {
+        string capitalized = capitalizeWords(line);
+        cout << capitalized << endl;
+    }
     return 0;
 }

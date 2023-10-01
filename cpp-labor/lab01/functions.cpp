@@ -74,6 +74,69 @@ pair<double, double> max2(double array[], int numElements) {
             secondLargest = array[i];
         }
     }
-    
+
     return make_pair(secondLargest, largest);
+}
+
+int countWords(string text) {
+    istringstream iss(text);
+    int wordCount = 0;
+    string word;
+
+    while (iss >> word) {
+        wordCount++;
+    }
+
+    return wordCount;
+}
+
+string code(string text) {
+    for (char &c: text) {
+        if (isalpha(c)) {
+            if (c == 'z') {
+                c = 'a';
+            } else if (c == 'Z') {
+                c = 'A';
+            } else {
+                c++;
+            }
+        }
+    }
+    return text;
+}
+
+string decode(string text) {
+    for (char &c: text) {
+        if (isalpha(c)) {
+            if (c == 'a') {
+                c = 'z';
+            } else if (c == 'A') {
+                c = 'Z';
+            } else {
+                c--;
+            }
+        }
+    }
+    return text;
+}
+
+string capitalizeWords(string text) {
+    string result;
+    bool capitalizeNext = true;
+
+    for (char c: text) {
+        if (isalpha(c)) {
+            if (capitalizeNext) {
+                result += toupper(c);
+                capitalizeNext = false;
+            } else {
+                result += tolower(c);
+            }
+        } else {
+            result += c;
+            capitalizeNext = true;
+        }
+    }
+
+    return result;
 }

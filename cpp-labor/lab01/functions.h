@@ -13,11 +13,12 @@ using namespace std;
 #include <sstream>
 #include <cmath>
 #include <utility>
+#include <cctype>
 
-//1.Feladat
+//1
 int countBitsOfAPositiveNumber(int number);
 
-//2.Feladat
+//2
 bool setBit(int &number, int order);
 
 //3
@@ -29,8 +30,14 @@ double stddev(double array[], int size);
 //5
 pair<double, double> max2(double array[], int numElements);
 
-//1
-double valami(int a, int b);
+//karakteres
+int countWords(string text);
+
+string code(string text);
+
+string decode(string text);
+
+string capitalizeWords(string text);
 
 
 #endif //CPP_LABOR_FUNCTIONS_H
