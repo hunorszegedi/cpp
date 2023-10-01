@@ -16,5 +16,6 @@ double stddev(int *array, int size);
 
 
 //1
+double valami(int a, int b);
 
 #endif //CPP_LABOR_FUNCTIONS_H
