@@ -80,3 +80,15 @@ void printArray(Point *points, int numPoints) {
     cout << endl;
 }
 
+pair<Point, Point> closestPoints(Point *points, int numPoints) {
+
+}
+
+pair<Point, Point> farthestPoints(Point *points, int numPoints) {
+
+}
+
+Point *farthestPointsFromOrigin(Point *points, int numPoints) {
+    
+}
+

@@ -20,6 +20,7 @@ int main() {
 
     testIsSquare("points.txt");
 
+    srand(time(nullptr));
     int numPoints = 10;
     Point *points = createArray(numPoints);
     for (int i = 0; i < numPoints; ++i) {
