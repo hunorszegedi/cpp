@@ -5,7 +5,8 @@
 #ifndef LAB2_POINT_H
 #define LAB2_POINT_H
 
-
+#include <iostream>
+using namespace std;
 class Point {
 private:
     int x, y;
@@ -15,6 +16,8 @@ public:
     int getX() const;
 
     int getY() const;
+
+    void print() const;
 };
 
 

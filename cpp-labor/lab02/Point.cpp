@@ -22,3 +22,8 @@ int Point::getY() const {
     return this->y;
 }
 
+void Point::print() const {
+    cout << "(" << this->x << "," << this->y << ")" << endl;
+}
+
+
