@@ -30,5 +30,28 @@ int main() {
     sortPoints(points, numPoints);
     printArray(points, numPoints);
 
+    pair<Point, Point> closest = closestPoints(points, numPoints);
+    cout << "Closest Points: ";
+    closest.first.print();
+    cout << " and ";
+    closest.second.print();
+    cout << endl;
+
+    pair<Point, Point> farthest = farthestPoints(points, numPoints);
+    cout << "Farthest Points: ";
+    farthest.first.print();
+    cout << " and ";
+    farthest.second.print();
+    cout << endl;
+
+    Point *farthestFromOrigin = farthestPointsFromOrigin(points, numPoints);
+    cout << "Farthest Points from Origin: ";
+    farthestFromOrigin[0].print();
+    cout << " and ";
+    farthestFromOrigin[1].print();
+    cout << endl;
+
+    delete[] farthestFromOrigin;
+    
     return 0;
 }
