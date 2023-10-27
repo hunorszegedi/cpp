@@ -4,4 +4,6 @@ add_executable(lab5 main_05.cpp
         Answer.h
         Question.h
         Quiz.h
-        Quiz.cpp)
+        Quiz.cpp
+        QuizGame.cpp
+        QuizGame.h)
