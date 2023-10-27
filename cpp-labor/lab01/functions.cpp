@@ -142,12 +142,20 @@ string capitalizeWords(string text) {
 }
 
 vector <string> splitWords(const string &text) {
-    istringstream iss(text);
     vector <string> words;
     string word;
+    string delimiters = " \t\n.,:;!?-()[]";
 
-    while (iss >> word) {
+    size_t start = 0;
+    size_t end = text.find_first_of(delimiters, start);
+
+    while (start != string::npos) {
+        word = text.substr(start, end - start);
+        transform(word.begin(), word.end(), word.begin(), ::tolower);
         words.push_back(word);
+
+        start = text.find_first_not_of(delimiters, end);
+        end = text.find_first_of(delimiters, start);
     }
 
     return words;

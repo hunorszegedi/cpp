@@ -103,14 +103,9 @@ int main(int argc, char *argv[]) {
     }
 
     //EXTRA
-    cout << "Enter the fileNumber: ";
-    int fileNumber;
-    cin >> fileNumber;
-    ifstream in(argv[fileNumber]);
-
-    if (!in) {
-        cerr << "File not Found: " << argv[fileNumber];
-        exit(-1);
+    if (argc != 3) {
+        cerr << "Usage: " << argv[0] << " <text_file> <n>" << endl;
+        return -1;
     }
 
     string fileName = argv[1];
@@ -118,32 +113,27 @@ int main(int argc, char *argv[]) {
 
     ifstream file(fileName);
     if (!file) {
-        cerr << "Hiba: A fajl nem talalhato." << endl;
-        return 1;
+        cerr << "Error: File not found!" << endl;
+        return -2;
     }
 
     map<string, int> wordFrequency;
 
     string lineExtra;
-    while (getline(file, line)) {
-        vector<string> words = splitWords(line);
+    while (getline(file, lineExtra)) {
+        vector<string> words = splitWords(lineExtra);
         for (const string &word: words) {
-            // Tegyük kisbetűvé a szót, hogy ne különböztessük meg a kis- és nagybetűket
-            string lowercaseWord = word;
-            transform(lowercaseWord.begin(), lowercaseWord.end(), lowercaseWord.begin(), ::tolower);
-            wordFrequency[lowercaseWord]++;
+            wordFrequency[word]++;
         }
     }
 
-    // Hozzunk létre egy vektor az előfordulások számával, majd rendezzük csökkenő sorrendbe
     vector<pair<string, int>> sortedWords(wordFrequency.begin(), wordFrequency.end());
     sort(sortedWords.begin(), sortedWords.end(), [](const pair<string, int> &a, const pair<string, int> &b) {
         return a.second > b.second;
     });
 
-    // Kiírjuk az első n leggyakoribb szót és a gyakoriságukat
-    cout << m << " leggyakoribb szo:" << endl;
-    for (int i = 0; i < n && i < sortedWords.size(); i++) {
+    cout << m << " most common words:" << endl;
+    for (int i = 0; i < m && i < sortedWords.size(); i++) {
         cout << sortedWords[i].first << ": " << sortedWords[i].second << endl;
     }
 
