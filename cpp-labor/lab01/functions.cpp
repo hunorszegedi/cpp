@@ -140,3 +140,15 @@ string capitalizeWords(string text) {
 
     return result;
 }
+
+vector <string> splitWords(const string &text) {
+    istringstream iss(text);
+    vector <string> words;
+    string word;
+
+    while (iss >> word) {
+        words.push_back(word);
+    }
+
+    return words;
+}

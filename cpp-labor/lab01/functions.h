@@ -14,6 +14,7 @@ using namespace std;
 #include <cmath>
 #include <utility>
 #include <cctype>
+#include <vector>
 
 //1
 int countBitsOfAPositiveNumber(int number);
@@ -38,6 +39,8 @@ string code(string text);
 string decode(string text);
 
 string capitalizeWords(string text);
+
+vector <string> splitWords(const string &text);
 
 
 #endif //CPP_LABOR_FUNCTIONS_H
