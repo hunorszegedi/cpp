@@ -93,6 +93,7 @@ void printArray(Point *points, int numPoints) {
     cout << endl;
 }
 
+//EXTRA
 pair<Point, Point> closestPoints(Point *points, int numPoints) {
     if (numPoints < 2) {
         cerr << "Insufficient number of points to find closest points." << endl;
@@ -114,6 +115,7 @@ pair<Point, Point> closestPoints(Point *points, int numPoints) {
     return closestPair;
 }
 
+//EXTRA
 pair<Point, Point> farthestPoints(Point *points, int numPoints) {
     if (numPoints < 2) {
         cerr << "Insufficient number of points to find farthest points." << endl;
