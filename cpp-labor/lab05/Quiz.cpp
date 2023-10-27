@@ -42,5 +42,3 @@ void Quiz::readQuestions(const string &filename) {
     }
     file.close();
 }
-
-
