@@ -19,7 +19,7 @@ public:
 
     static int getUserAnswer(const Question &question);
 
-    void handleUserAnswer(const Question &question, int userAnswer);
+    void handleUserAnswer(Question question, int userAnswer);
 
     static void displayCorrectAnswers(const Question &question);
 
