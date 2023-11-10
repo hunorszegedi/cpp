@@ -1,0 +1,4 @@
+A konyv szerzoje: John Doe
+A kony cime: C++ Programming
+A konyv kiadasi eve: 2022
+A konyv oldalainak szama: 500
