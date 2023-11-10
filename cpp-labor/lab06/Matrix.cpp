@@ -139,16 +139,14 @@ ostream &operator<<(ostream &os, const Matrix &mat) {
 
 double *Matrix::operator[](int index) {
     if (index < 0 or index >= mRows) {
-        out_of_range give_me_a_name("Index out of range!");
-        return nullptr;
+        throw out_of_range("Index out of range!");
     }
     return mElements[index];
 }
 
 double *Matrix::operator[](int index) const {
     if (index < 0 or index >= mRows) {
-        out_of_range give_me_a_name("Index out of range!");
-        return nullptr;
+        throw out_of_range("Index out of range!");
     }
     return mElements[index];
 }
