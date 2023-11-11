@@ -4,6 +4,9 @@
 
 #ifndef LAB2_POINT_H
 #define LAB2_POINT_H
+
+#include "../labor2_ismetles/Point.h"
+
 #define M 2000
 
 class Point {
@@ -20,7 +23,10 @@ public:
         return y;
     }
 
-    [[nodiscard]] double distanceTo(const Point &point) const;
 };
+
+void Point::print() const {
+
+}
 
 #endif //LAB2_POINT_H
