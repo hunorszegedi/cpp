@@ -34,6 +34,8 @@ public:
 
     //+
     friend Array operator+(const Array &a, const Array &b);
+
+    int getMSize() const;
 };
 
 

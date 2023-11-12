@@ -68,7 +68,7 @@ public:
     // Copy assignment
     // operation is permitted between matrices having the same dimensions
     // otherwise throws an exception (out_of_range)
-    Matrix operator=(const Matrix &mat);
+    Matrix & operator=(const Matrix &mat);
 
     // Move assignment
     Matrix &operator=(Matrix &&mat);

@@ -59,3 +59,7 @@ ostream &operator<<(ostream &os, const Array &array) {
     }
     return os;
 }
+
+int Array::getMSize() const {
+    return mSize;
+}
