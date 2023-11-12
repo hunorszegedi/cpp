@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(labor6_ismetles main.cpp
         Matrix.h
-        Matrix.cpp)
+        Matrix.cpp
+        Array.h
+        Array.cpp)
