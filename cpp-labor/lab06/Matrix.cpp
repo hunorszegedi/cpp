@@ -151,7 +151,7 @@ double *Matrix::operator[](int index) const {
     return mElements[index];
 }
 
-Matrix &Matrix::operator=(const Matrix &mat) {
+Matrix Matrix::operator=(const Matrix &mat) {
     if (this == &mat) return *this;
 
     for (int i = 0; i < mRows; ++i) {
@@ -191,5 +191,3 @@ Matrix &Matrix::operator=(Matrix &&mat) {
 
     return *this;
 }
-
-
