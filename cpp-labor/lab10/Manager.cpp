@@ -40,8 +40,11 @@ void Manager::deleteEmployeeById(int id) {
 }
 
 void Manager::printEmployees(ostream &os) const {
-    for (int i = 0; i < employees.size(); ++i) {
-        os << "Manager" << this->managerPosition << endl;
-        os << *employees[i] << endl;
+    os << "Manager " << this->managerPosition << " " << this->firstName << " " << this->lastName << " beosztottjai:"
+       << endl;
+    for (auto employee: employees) {
+        os << "Alkalmazott " << employee->getId() << " ";
+        employee->print(os);
+        os << endl;
     }
 }

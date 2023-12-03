@@ -5,4 +5,6 @@ add_executable(lab10 main_10.cpp
         Employee.h
         Employee.cpp
         Manager.h
-        Manager.cpp)
+        Manager.cpp
+        Company.h
+        Company.cpp)
