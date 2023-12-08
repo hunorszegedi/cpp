@@ -99,6 +99,6 @@ int main() {
         }
         cout << "\taverage: " << service->getAverage(id) << endl;
     }
-    delete service;
+    delete service;//
     return 0;
 }
