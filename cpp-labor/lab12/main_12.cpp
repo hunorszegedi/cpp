@@ -35,7 +35,7 @@ int main() {
     cout << "Number of settlements: " << statistics.numSettlements() << endl;
     cout << "Number of counties: " << statistics.numCounties() << endl;
 
-    //findsettlementsby county
+    //find settlementsby county
     cout << "Find settlements by county: " << endl;
     vector<Settlement> settlements = statistics.findSettlementsByCounty("AB");
     for (auto &settlement: settlements) {
