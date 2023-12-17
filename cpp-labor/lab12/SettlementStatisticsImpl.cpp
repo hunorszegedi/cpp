@@ -5,6 +5,7 @@
 #include <set>
 #include <fstream>
 #include <sstream>
+#include <limits>
 #include "SettlementStatisticsImpl.h"
 
 SettlementStatisticsImpl::SettlementStatisticsImpl(const vector<Settlement> &settlements) {
@@ -34,13 +35,13 @@ int SettlementStatisticsImpl::numSettlementsByCounty(const string &county) const
 }
 
 vector<Settlement> SettlementStatisticsImpl::findSettlementsByCounty(const string &county) const {
-    vector<Settlement> settlements;
+    vector<Settlement> settlementsFind;
     for (auto &settlement: this->settlements) {
         if (settlement.first == county) {
-            settlements.push_back(settlement.second);
+            settlementsFind.push_back(settlement.second);
         }
     }
-    return settlements;
+    return settlementsFind;
 }
 
 Settlement SettlementStatisticsImpl::findSettlementsByNameAndCounty(const string &name, const string &county) const {
@@ -49,19 +50,45 @@ Settlement SettlementStatisticsImpl::findSettlementsByNameAndCounty(const string
             return settlement.second;
         }
     }
-    return Settlement(NULL, NULL, 0);
+    return Settlement("does not exist", "", 0);
 }
 
 Settlement SettlementStatisticsImpl::maxPopulationDensity() const {
-    return Settlement(NULL, NULL, 0);
+    Settlement maxDensitySettlement("", "", 0);
+    int maxDensity = 0;
+    for (const auto &settlement: settlements) {
+        int density = settlement.second.getPopulation();
+        if (density > maxDensity) {
+            maxDensity = density;
+            maxDensitySettlement = settlement.second;
+        }
+    }
+    return maxDensitySettlement;
 }
 
 Settlement SettlementStatisticsImpl::minPopulationDensity() const {
-    return Settlement(NULL, NULL, 0);
+    Settlement minDensitySettlement("", "", 0);
+    int minPopulation = numeric_limits<int>::max();
+
+    for (const auto &settlement: settlements) {
+        int population = settlement.second.getPopulation();
+        if (population < minPopulation) {
+            minPopulation = population;
+            minDensitySettlement = settlement.second;
+        }
+    }
+
+    return minDensitySettlement;
 }
 
 vector<Settlement> SettlementStatisticsImpl::findSettlementsByName(const string &name) {
-    return vector<Settlement>();
+    vector<Settlement> result;
+    for (const auto &settlement: this->settlements) {
+        if (settlement.second.getName() == name) {
+            result.push_back(settlement.second);
+        }
+    }
+    return result;
 }
 
 void SettlementStatisticsImpl::addSettlement(Settlement settlement) {

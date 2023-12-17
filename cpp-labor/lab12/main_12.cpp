@@ -43,4 +43,23 @@ int main() {
     }
     //41 megye kell
     //13746
+
+    //find settlements by county and name
+    cout << "Find settlements by county and name: " << endl;
+    Settlement settlement = statistics.findSettlementsByNameAndCounty("Barabant", "AB");
+    if (settlement.getName() == "does not exist") {
+        cout << "Settlement does not exist." << endl;
+    } else {
+        cout << settlement << endl;
+    }
+
+    cout << endl;
+
+    //maxPopulationDensity
+    cout << "Max population density: " << endl;
+    cout << statistics.maxPopulationDensity() << endl << endl;
+
+    //minPopulationDensity
+    cout << "Min population density: " << endl;
+    cout << statistics.minPopulationDensity() << endl << endl;
 }
