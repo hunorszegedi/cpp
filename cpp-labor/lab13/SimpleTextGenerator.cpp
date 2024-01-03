@@ -55,6 +55,7 @@ void SimpleTextGenerator::trainFromFile(string filename) {
     for (int i = 0; i < words.size(); i++) {
         string prefix = words[i] + " " + words[i + 1];
         string postfix = words[i + 2];
+        //megnezni, ha benne van-e mar
         data[prefix].push_back(postfix);
     }
 
