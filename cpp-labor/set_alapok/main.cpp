@@ -62,5 +62,12 @@ int main() {
         cout << "nincs";
     }
 
+
+    setMasolt.erase(setMasolt.find(6));
+    cout << endl;
+    for (auto &temp: setMasolt) {
+        cout << temp << " ";
+    }
+
     return 0;
 }

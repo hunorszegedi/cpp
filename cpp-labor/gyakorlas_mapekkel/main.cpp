@@ -96,7 +96,7 @@ int main() {
     }
 
     //find an element with a given key
-cout << endl;
+    cout << endl;
     auto it3 = ujMap.find(18);
     if (it3 != ujMap.end()) {
         cout << "Key: " << it3->first << ", Value: " << it3->second << endl;
@@ -104,6 +104,20 @@ cout << endl;
         cout << "nincs ilyen kulcs" << endl;
     }
 
-
+    map<string, int> mp3;
+    mp3.insert(pair<string, int>("en", 2));
+    mp3.insert(pair<string, int>("te", 2));
+    mp3.insert(pair<string, int>("o", 2));
+    mp3.insert(pair<string, int>("mi", 2));
+    mp3.insert(pair<string, int>("ti", 2));
+    mp3.insert(pair<string, int>("ok", 2));
+    for (const auto &temp: mp3) {
+        cout << temp.first << " " << temp.second << endl;
+    }
+    mp3.erase(mp3.begin(), mp3.find("ok"));
+    cout << endl;
+    for (const auto &temp: mp3) {
+        cout << temp.first << " " << temp.second << endl;
+    }
     return 0;
 }

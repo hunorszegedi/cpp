@@ -10,11 +10,14 @@
 
 class Manager : public Employee {
 public:
-    const static string manager_munkakor;
+    vector<Employee *> employees;
+    const string manager_munkakor = "manager";
 
-    Manager(const string &vezetekNev, const string &keresztNev, int szuletesEve, const string &munkakor);
+    Manager(const string &vezetekNev, const string &keresztNev, int szuletesEve, const string &munkakor,
+            const vector<Employee *> &employees, const string &managerMunkakor);
 
-    void addEmployee(Employee *);
+    void addEmployee1(Employee *);
+    void deleteEmployee1(Employee *);
 };
 
 
